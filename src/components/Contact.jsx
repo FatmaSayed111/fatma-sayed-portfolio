@@ -1,0 +1,65 @@
+export default function Contact() {
+  return (
+    <section id="contact" className="section container">
+      <h1 className="heading">Contact</h1>
+      <p className="mt-4 text-slate-400 text-center">
+        Feel free to reach out to me through the form or my social profiles:
+      </p>
+
+      <div className="mt-10 grid md:grid-cols-2 gap-8">
+        {}
+        <form className="bg-slate-900 shadow-lg rounded-2xl p-6 space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full border border-slate-700 bg-slate-800 text-white p-3 rounded-lg"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full border border-slate-700 bg-slate-800 text-white p-3 rounded-lg"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            className="w-full border border-slate-700 bg-slate-800 text-white p-3 rounded-lg"
+          />
+          <button className="w-full bg-emerald-500 text-white py-3 rounded-lg font-semibold hover:bg-emerald-600 transition">
+            Send Message
+          </button>
+        </form>
+
+        { }
+        <div className="flex flex-col justify-center bg-slate-900 shadow-lg rounded-2xl p-6 text-slate-300 space-y-4">
+          <p>
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:fatma1.sayed12@gmail.com"
+              className="text-emerald-400"
+            >
+              fatma1.sayed12@gmail.com
+            </a>
+          </p>
+          <p>
+            <strong>LinkedIn:</strong>{" "}
+            <a
+              href="https://linkedin.com/in/your-username"
+              className="text-emerald-400"
+            >
+              linkedin.com/in/your-username
+            </a>
+          </p>
+          <p>
+            <strong>GitHub:</strong>{" "}
+            <a
+              href="https://github.com/your-username"
+              className="text-emerald-400"
+            >
+              github.com/your-username
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ring: 115 97% 62%; }
+html, body, #root { height: 100%; }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition; }
+  .btn-primary { @apply bg-emerald-400 text-slate-900 hover:bg-emerald-300 active:bg-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/40; }
+  .btn-ghost { @apply bg-white/10 backdrop-blur hover:bg-white/20 active:bg-white/25; }
+  .card { @apply rounded-3xl bg-white/5 border border-white/10 shadow-xl; }
+  .section { @apply py-20 md:py-28; }
+  .heading { @apply text-3xl md:text-4xl font-extrabold tracking-tight; }
+  .subheading { @apply text-sm text-slate-400; }
+}
