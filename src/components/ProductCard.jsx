@@ -4,7 +4,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="card p-4 w-64">
       <img
-        src={product.thumbnail}
+        src={product.thumbnail} 
         alt={product.title}
         className="rounded-xl w-full h-40 object-cover"
       />
