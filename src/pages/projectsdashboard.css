@@ -1,0 +1,238 @@
+/* ====== Container ====== */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease-in-out;
+}
+
+/* ====== Title ====== */
+.dashboard-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #222;
+  font-weight: bold;
+}
+
+/* ====== Form ====== */
+.dashboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.dashboard-form input,
+.dashboard-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.dashboard-form input:focus,
+.dashboard-form textarea:focus {
+  border-color: #007bff;
+}
+
+.dashboard-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.dashboard-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-form button:hover {
+  background-color: #0056b3;
+}
+
+/* ====== Table ====== */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dashboard-table tr:hover {
+  background-color: #eef5ff;
+}
+
+/* ====== Buttons inside table ====== */
+.dashboard-table button {
+  margin-right: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.dashboard-table button:first-child {
+  background-color: #28a745; /* Edit */
+}
+
+.dashboard-table button:first-child:hover {
+  background-color: #218838;
+}
+
+.dashboard-table button:last-child {
+  background-color: #dc3545; /* Delete */
+}
+
+.dashboard-table button:last-child:hover {
+  background-color: #c82333;
+}
+/* ====== Container ====== */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease-in-out;
+}
+
+/* ====== Title ====== */
+.dashboard-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #222;
+  font-weight: bold;
+}
+
+/* ====== Form ====== */
+.dashboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.dashboard-form input,
+.dashboard-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.dashboard-form input:focus,
+.dashboard-form textarea:focus {
+  border-color: #007bff;
+}
+
+.dashboard-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.dashboard-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-form button:hover {
+  background-color: #0056b3;
+}
+
+/* ====== Table ====== */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dashboard-table tr:hover {
+  background-color: #eef5ff;
+}
+
+/* ====== Buttons inside table ====== */
+.dashboard-table button {
+  margin-right: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.dashboard-table button:first-child {
+  background-color: #28a745; /* Edit */
+}
+
+.dashboard-table button:first-child:hover {
+  background-color: #218838;
+}
+
+.dashboard-table button:last-child {
+  background-color: #dc3545; /* Delete */
+}
+
+.dashboard-table button:last-child:hover {
+  background-color: #c82333;
+}

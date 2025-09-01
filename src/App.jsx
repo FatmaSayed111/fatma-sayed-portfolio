@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -8,17 +8,23 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Dashboard from "./pages/ProjectsDashboard";
+import ProjectsDashboard from "./pages/ProjectsDashboard";
 import Login from "./pages/Login";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = () => setLoggedIn(true);
 
+  const handleLogout = () => {
+    setLoggedIn(false);
+    navigate("/"); // يوديك للصفحة الرئيسية بعد الـ Logout
+  };
+
   return (
-    <Router>
-      <Navbar loggedIn={loggedIn} />
+    <>
+      <Navbar loggedIn={loggedIn} onLogout={handleLogout} />
 
       <Routes>
         <Route
@@ -43,11 +49,17 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={loggedIn ? <Dashboard /> : <Navigate to="/login" />}
+          element={loggedIn ? <ProjectsDashboard /> : <Navigate to="/login" />}
         />
       </Routes>
-    </Router>
+    </>
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
