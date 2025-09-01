@@ -1,41 +1,27 @@
-import { useEffect, useState } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+export default function Navbar({ loggedIn }) {
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition ${
-        scrolled
-          ? "backdrop-blur bg-slate-950/70 border-b border-white/10"
-          : ""
-      }`}
-    >
-      <nav className="container flex items-center justify-between h-16">
-        <a href="#" className="font-extrabold text-lg">
-          Fatma<span className="text-emerald-400">.</span>
-        </a>
-        <ul className="hidden md:flex items-center gap-6 text-sm">
-          <li><a href="#about" className="hover:text-emerald-400">About</a></li>
-          <li><a href="#skills" className="hover:text-emerald-400">Skills</a></li>
-          <li><a href="#projects" className="hover:text-emerald-400">Projects</a></li>
-          <li><a href="#products" className="hover:text-emerald-400">Products</a></li>
-          <li><a href="#experience" className="hover:text-emerald-400">Experience</a></li>
-          <li><a href="#contact" className="hover:text-emerald-400">Contact</a></li>
-        </ul>
-        <div className="flex items-center gap-3">
-          <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="btn btn-ghost p-2" aria-label="Github"><Github size={18}/></a>
-          <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer" className="btn btn-ghost p-2" aria-label="LinkedIn"><Linkedin size={18}/></a>
-          <a href="mailto:you@example.com" className="btn btn-primary text-sm">Email me</a>
-        </div>
-      </nav>
-    </header>
+      <nav className="absolute top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center p-4 backdrop-blur bg-slate-950/30">
+      <div className="font-extrabold text-lg text-white">
+        Fatma<span className="text-emerald-400">.</span>
+      </div>
+
+      <ul className="flex gap-4 text-white">
+        <li><Link to="/">Home</Link></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        {!loggedIn && (
+          <li>
+            <Link to="/login">
+              <button className="bg-emerald-500 px-3 py-1 rounded">Dashboard</button>
+            </Link>
+          </li>
+        )}
+      </ul>
+    </nav>
   );
 }

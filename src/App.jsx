@@ -1,4 +1,5 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,21 +8,45 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ProductsPage from "./pages/ProductsPage";
+import Dashboard from "./pages/ProjectsDashboard";
+import Login from "./pages/Login";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLogin = () => setLoggedIn(true);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <ProductsPage />
-      <Skills />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <Navbar loggedIn={loggedIn} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <About />
+              <Experience />
+              <Projects />
+              <Skills />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={loggedIn ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />}
+        />
+
+        <Route
+          path="/dashboard"
+          element={loggedIn ? <Dashboard /> : <Navigate to="/login" />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
